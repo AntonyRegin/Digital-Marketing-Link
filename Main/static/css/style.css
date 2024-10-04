@@ -1,0 +1,130 @@
+/* style.css */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    height: 100vh;
+    background-color: #f4f4f4;
+    color: #333;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2.5em; /* Increased font size */
+    color: #0073e6;
+    text-align: center; /* Center text */
+}
+
+form {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px; /* Increased padding */
+    width: 300px; /* Fixed width for form */
+    transition: transform 0.3s ease; /* Smooth transform on hover */
+}
+
+form:hover {
+    transform: translateY(-3px); /* Slight lift effect on hover */
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    font-size: 1.1em; /* Increased font size */
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 12px; /* Increased padding */
+    border: 2px solid #ccc; /* Increased border width for better visibility */
+    border-radius: 6px; /* Slightly larger border-radius */
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Added transform transition */
+    position: relative; /* For pseudo-element positioning */
+}
+
+/* Animation on focus */
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    border-color: #0073e6;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 115, 230, 0.5); /* Added box-shadow on focus */
+    transform: scale(1.02); /* Slightly grow the field */
+}
+
+textarea {
+    resize: none; /* Disable resizing for textarea */
+    height: 80px; /* Set a fixed height for the textarea */
+}
+
+button {
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 12px; /* Increased padding */
+    border-radius: 6px; /* Slightly larger border-radius */
+    font-size: 1.2em; /* Increased font size */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform transition */
+    width: 100%;
+}
+
+button:hover {
+    background-color: #005bb5;
+    transform: translateY(-2px) scale(1.05); /* Slight lift and grow effect on hover */
+}
+
+#output {
+    margin-top: 20px;
+    background-color: #e7f3fe;
+    padding: 15px;
+    border: 1px solid #b3d4fc;
+    border-radius: 4px;
+    width: 300px; /* Fixed width for output */
+    text-align: center;
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* Added background transition */
+}
+
+#output.success {
+    background-color: #d4edda; /* Light green for success messages */
+    border-color: #c3e6cb; /* Green border */
+}
+
+#output.error {
+    background-color: #f8d7da; /* Light red for error messages */
+    border-color: #f5c6cb; /* Red border */
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    form {
+        width: 90%; /* Full width on small screens */
+    }
+
+    #output {
+        width: 90%; /* Full width on small screens */
+    }
+}
